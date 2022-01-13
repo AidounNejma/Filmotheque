@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body%} 
+{{ form_start(registrationForm, {attr: {novalidate: 'novalidate'}}) }}
+{{ form_row(registrationForm.lastname) }}
+{{ form_row(registrationForm.firstname) }}
+{{ form_row(registrationForm.password) }}
+{{ form_row(registrationForm.email) }}
+<button type="submit" >Envoyer</button>
+{{ form_end(registrationForm) }}
+{% endblock %} 
+
+
