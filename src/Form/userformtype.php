@@ -19,26 +19,47 @@ class UserFormType extends AbstractType
             ->add('firstname', TextType::class , [
                 'label' => false,
                 'attr'=>[
-                    "placeholder"=> 'Saisissez votre prénom...'
+                    "placeholder"=> 'Saisissez votre prénom...',
+                    "id"=> "form2Example11",
+                    "class" =>"form-control"
                 ],
             ])
             ->add('lastname', TextType::class , [
                 'label' => false,
                 'attr'=>[
-                    "placeholder"=> 'Saisissez votre nom...'
+                    "placeholder"=> 'Saisissez votre nom...',
+                    "id"=> "form2Example11",
+                    "class" =>"form-control"
                 ],
             ])
             ->add('email', TextType::class , [
                 'label' => false,
                 'attr'=>[
-                    "placeholder"=> 'Saisissez votre email...'
+                    "placeholder"=> 'Saisissez votre email...',
+                    "id"=> "form2Example11",
+                    "class" =>"form-control"
                 ],
             ])
-            ->add('password', TextType::class , [
+            ->add('password', PasswordType::class , [
                 'label' => false,
+                'mapped' => false,
                 'attr'=>[
-                    "placeholder"=> 'Saisissez votre mot de passe...'
-                ]
+                    "placeholder"=> 'Saisissez votre mot de passe...',
+                    "auto-complete"=> 'new-password',
+                    "id"=> "form2Example11",
+                    "class" =>"form-control"
+                ],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Entrer un mot de passe',
+                    ]),
+                    new Length([
+                        'min' => 8,
+                        'minMessage' => 'Votre mot de passe doit comporter {{ limit }} caractères',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 4096,
+                    ]),
+                ],
             ])
         ;
     }
