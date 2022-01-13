@@ -5,25 +5,21 @@
   /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-linear-gradient(
     to right,
-    #349999,
-    #297272,
-    #003333,
-    #212221
+    var(--main-blue),
+    var(--main-greenblue),
+    var(--main-darkgreen),
+    var(--main-black)
     );
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #297272, #297272, #003333, #000);
+    background: linear-gradient(to right, var(--main-blue), var(--main-greenblue), var(--main-darkgreen), var(--main-black));
 }
 
 body{
   background-color: #ced1ce;
 }
 
-@media (min-width: 768px) {
-    .gradient-form {
-        height: 100vh !important;
-    }
-}
+
 @media (min-width: 769px) {
     .gradient-custom-2 {
         border-top-right-radius: 0.3rem;

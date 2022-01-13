@@ -1,0 +1,81 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables pour les couleurs */
+:root{
+    --main-white: #ffffff;
+    --main-blue: #349999;
+    --main-greenblue: #297272;
+    --main-darkgreen: #003333;
+    --main-black: #212221;
+    --flash-bg-success: #4c8d3f;
+    --flash-text-success: #ffffff;
+    --flash-bg-warning: #d33a4b;
+    --flash-text-warning: #ffffff;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* -------------------------------------------------------------------- */
+
+/* Nav */
+.secondNav:hover{
+    color: #ffffff !important;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #97b6b6,
+        0 0 82px #97b6b6,
+        0 0 92px #97b6b6,
+        0 0 102px #97b6b6,
+        0 0 151px #97b6b6;
+    transition: 0.5s;
+}
+/* Style des messages de succès et d'erreurs */
+.flash-success{
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 700;
+    background-color: var(--flash-bg-success);
+    color: var(--flash-text-success);
+    animation: blinker 3s linear 2;
+}
+
+.flash-warning{
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 700;
+    background-color: var(--flash-bg-warning);
+    color: var(--flash-text-warning);
+    animation: blinker 3s linear 3;
+}
+.form-errors{
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--flash-bg-warning);
+    color: var(--flash-text-warning);
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+/* -------------------------------------------------------------------- */

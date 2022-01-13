@@ -12,7 +12,17 @@ import './styles/app.css';
 // start the Stimulus application
 import 'bootstrap';
 
-//importer css bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css'
 
+/* Ajouts de ma part */
 
+//Import du CSS de Bootstrap
+import 'bootstrap/dist/css/bootstrap.css'
+
+//Import de Jquery pour Bootstrap
+const $ = require('jquery');
+// fixe le problème d'utilisation tardive de jQuery 
+global.$ = global.jQuery = $;
+require('bootstrap');
+
+//Import du CSS de fontAwesome
+import '@fortawesome/fontawesome-free/css/all.min.css'
