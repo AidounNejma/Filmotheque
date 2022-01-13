@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------- */
+/* Général */
+
 *,
 *::after,
 *::before{
@@ -24,8 +27,8 @@ a{
     color: inherit;
 }
 /* -------------------------------------------------------------------- */
-
 /* Nav */
+
 .secondNav:hover{
     color: #ffffff !important;
     text-shadow:
@@ -39,7 +42,18 @@ a{
         0 0 151px #97b6b6;
     transition: 0.5s;
 }
+
+.searchBar{
+    padding: 8% 0 4% 0 !important;
+}
+
+.searchBtn{
+    background-color: var(--main-greenblue) !important;
+}
+
+/* -------------------------------------------------------------------- */
 /* Style des messages de succès et d'erreurs */
+
 .flash-success{
     width: fit-content;
     margin: auto;
