@@ -60,3 +60,37 @@
     object-fit: cover;
     width: 100%;
 }
+
+.textCarousel{
+    position: absolute;
+    color: var(--main-white);
+    top: 58%;
+    left: 8%;
+    background: #99939363;
+    padding: 2%;
+    margin: 0 62% 0 0;
+}
+
+.linkCarousel{
+    background: var(--main-blue);
+    color: var(--main-white);
+    border-radius: 50px;
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    padding: 1%;
+}
+
+.linkCarousel:hover{
+    color: var(--main-white) !important;
+    background-color: var(--main-darkgreen);
+    transition: 0.5s;
+}
+
+.titleCarousel{
+    font-size: 18px;
+}
+
+.info{
+    font-size: 12px;
+}
