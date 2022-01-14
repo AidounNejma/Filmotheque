@@ -1,6 +1,6 @@
 
     <template>
-        <agile :initial-slide="3">
+        <agile :initial-slide="3" fade :autoplay-speed="5000" :speed="2500" pause-on-hover autoplay>
         <img class="slide" src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"/>
         <img class="slide" src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"/>
         <img class="slide" src="https://images.unsplash.com/photo-1524260855046-f743b3cdad07?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"/>
@@ -14,22 +14,22 @@
     </template>
 
 
-<script> 
-import Vue from 'vue'
-import { VueAgile } from 'vue-agile'
+<script>
 
-export default {
-    components: {
-        agile: VueAgile
+    import Vue from 'vue'
+    import { VueAgile } from 'vue-agile'
+
+    export default {
+        components: {
+            agile: VueAgile
+        }
     }
-}
 
-const App = new Vue({
-	el: '#app',
-	components: {
-		agile: VueAgile 
-	} 
-});
+    const App = new Vue({
+        el: '#app',
+        components: {
+            agile: VueAgile 
+        } 
+    });
 
-console.log(App)
 </script>
