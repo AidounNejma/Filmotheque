@@ -20,8 +20,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 //Import du CSS de fontAwesome
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
-
+//Imports Vue
+import Vue from 'vue'
 import App from './components/App.vue'
-console.log(App);
 
 new Vue({ render: h => h(App) }).$mount('#app')

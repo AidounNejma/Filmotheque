@@ -2,6 +2,11 @@
 
 {% block title %}Accueil | Filmothèque{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('carousel') }}
+{% endblock %} 
+
 {% block body %}
     {% include "./components/_second_nav.html.twig" %}
     <div id="app"></div>
