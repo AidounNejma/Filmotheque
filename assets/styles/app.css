@@ -26,10 +26,20 @@ a{
     text-decoration: none;
     color: inherit;
 }
+
+.footerLinks:hover, .headerLinks:hover{
+    color: var(--main-greenblue) !important;
+    transition: 0.5s;
+}
+
 /* -------------------------------------------------------------------- */
 /* Nav */
-
-.secondNav:hover{
+.secondNav{
+    background-color: #3499998f !important;
+    height: 70px !important;
+    z-index: 1;
+}
+.secondNavLinks:hover{
     color: #ffffff !important;
     text-shadow:
         0 0 7px #fff,
