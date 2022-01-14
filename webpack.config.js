@@ -22,7 +22,9 @@ Encore
      */
     .addEntry('app', './assets/app.js')
     .addEntry('authentication', './assets/authentication.js')
+    
 
+    
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 
@@ -32,6 +34,9 @@ Encore
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
     .enableSingleRuntimeChunk()
+
+    //Ajout de VueJs
+    .enableVueLoader()
 
     /*
      * FEATURE CONFIG

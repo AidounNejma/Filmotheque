@@ -8,7 +8,6 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
-
 // start the Stimulus application
 import 'bootstrap';
 
@@ -18,11 +17,11 @@ import 'bootstrap';
 //Import du CSS de Bootstrap
 import 'bootstrap/dist/css/bootstrap.css'
 
-//Import de Jquery pour Bootstrap
-const $ = require('jquery');
-// fixe le problème d'utilisation tardive de jQuery 
-global.$ = global.jQuery = $;
-require('bootstrap');
-
 //Import du CSS de fontAwesome
 import '@fortawesome/fontawesome-free/css/all.min.css'
+
+
+import App from './components/App.vue'
+console.log(App);
+
+new Vue({ render: h => h(App) }).$mount('#app')
