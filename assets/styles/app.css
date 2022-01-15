@@ -16,6 +16,7 @@
     --main-greenblue: #297272;
     --main-darkgreen: #003333;
     --main-black: #212221;
+    --main-grey: #ebe7e7;
     --flash-bg-success: #4c8d3f;
     --flash-text-success: #ffffff;
     --flash-bg-warning: #d33a4b;
@@ -32,8 +33,11 @@ a{
     transition: 0.5s;
 }
 
+/* Fin Général */
+
 /* -------------------------------------------------------------------- */
-/* Nav */
+
+/* Deuxième Nav */
 .secondNav{
     background-color: #3499998f !important;
     height: 70px !important;
@@ -60,8 +64,9 @@ a{
 .searchBtn{
     background-color: var(--main-greenblue) !important;
 }
-
+/* Fin Nav */
 /* -------------------------------------------------------------------- */
+
 /* Style des messages de succès et d'erreurs */
 
 .flash-success{
@@ -102,4 +107,54 @@ a{
         opacity: 0;
     }
 }
+/* Fin du style des messages de succès et d'erreurs */
 /* -------------------------------------------------------------------- */
+
+/* Animation IntersectionObserver*/
+[class*="reveal-"]{
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.reveal-visible{
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1.4s cubic-bezier(.5, 0, 0, 1);
+}
+
+.reveal-2{ /* Pour mettre un délai dans l'apparition des blocs au scroll */
+    transition-delay: .1s;
+}
+
+.reveal-3{
+    transition-delay: .2s;
+}
+
+.reveal-4{
+    transition-delay: .3s;
+}
+
+.reveal-5{
+    transition-delay: .4s;
+}
+
+.reveal-6{
+    transition-delay: .5s;
+}
+
+.reveal-7{
+    transition-delay: .1s;
+}
+/* Fin Animation IntersectionObserver*/
+/* -------------------------------------------------------------------- */
+
+/* Contenu */
+
+.content{
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin: 0 10%;
+    background-color: var(--main-grey);
+    overflow:hidden;
+    padding: 0px 10px;
+}

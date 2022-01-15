@@ -4,10 +4,35 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    {{ encore_entry_link_tags('carousel') }}
+    {{ encore_entry_link_tags('home') }}
 {% endblock %} 
 
 {% block body %}
+
     {% include "./components/_second_nav.html.twig" %}
-    <div id="app"></div>
+    <div id="carousel"></div>
+
+    <section class="d-flex justify-content-between content">
+    <div class="flex-md-column p-2 text-center">
+        <img src="../../assets/img/home/info1.png" alt""/>
+        <h4>Découvrez le Service de <span>Vidéo à la demande</span> de Filmothèque !</h4>
+        <a href="">Voir les fonctionnalités</a>
+    </div>
+    <div class="flex-md-column p-2 text-center">
+        <img src="" alt""/>
+        <h4>Découvrez le Service de <span>Vidéo à la demande</span> de Filmothèque !</h4>
+        <a href="">Voir les fonctionnalités</a>
+    </div>
+    <div class="flex-md-column p-2 text-center">
+        <img src="" alt""/>
+        <h4>Découvrez le Service de <span>Vidéo à la demande</span> de Filmothèque !</h4>
+        <a href="">Voir les fonctionnalités</a>
+    </div>
+    </section>
+
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('home') }}
+    {% endblock %}
+
 {% endblock %}

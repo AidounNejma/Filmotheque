@@ -20,8 +20,31 @@ import 'bootstrap/dist/css/bootstrap.css'
 //Import du CSS de fontAwesome
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
-//Imports Vue
-import Vue from 'vue'
-import App from './components/App.vue'
 
-new Vue({ render: h => h(App) }).$mount('#app')
+
+/* API intersection observer */
+/* Animation des blocs  */
+
+/* Utilisation de l'API instersection Observer pour détecter quand un bloc est 
+    visible à l'écran (voir tuto grafikart) */
+
+    const ratio = .2
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: ratio
+    }
+    
+    const handleIntersect = function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.intersectionRatio > ratio) {
+                entry.target.classList.add('reveal-visible')
+                observer.unobserve(entry.target) //une fois que l'élément a été vu une fois, il ne fera plus aucun appel (éviter la répétition de l'animation)
+            } 
+        })
+    }
+    const observer = new IntersectionObserver(handleIntersect, options);
+    document.querySelectorAll('[class*="reveal-"]').forEach(function (r){ /* boucle pour prendre plusieurs éléments dans l'animation */
+        observer.observe(r)
+    })
+    

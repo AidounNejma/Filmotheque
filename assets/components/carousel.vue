@@ -80,8 +80,8 @@
         }
     }
 
-    const App = new Vue({
-        el: '#app',
+    const Carousel = new Vue({
+        el: '#carousel',
         components: {
             agile: VueAgile 
         } 
