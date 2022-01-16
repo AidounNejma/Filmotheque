@@ -2,18 +2,102 @@
         <div class="news p-4">
             <h3 class="text-center text-white pb-4"> Nouveautés</h3>
             <div class="d-flex">
-                <div class="firstDiv mx-4">
-                    <a href="" class="p-2 imgOne"><img alt="" src="/img/home/pulpfiction.png"></a>
-                </div>
-                <div class="d-flex flex-wrap px-4 px-4 secondPart">
-                    <a href="" class="p-2 imgEight"><img alt="" src="/img/home/avatar.png"></a>
-                    <a href="" class="p-2 imgEight"><img alt="" src="/img/home/inception.png"></a>
-                    <a href="" class="p-2 imgEight"><img src="/img/home/joker.png" alt=""/></a>
-                    <a href="" class="p-2 imgEight"><img src="/img/home/le_discours_dun_roi_affiche.png" alt=""/></a>
-                    <a href="" class="p-2 imgEight"><img src="/img/home/toystory.png" alt=""/></a>
-                    <a href="" class="p-2 imgEight"><img src="/img/home/thepaintedveil.png" alt="" /></a>
-                    <a href="" class="p-2 imgEight"><img src="/img/home/matrix.png" alt=""/></a>
-                    <a href="" class="p-2 imgEight"><img src="/img/home/Le_Temoin_du_mal.png" alt="" /></a>
+
+                <a href="#" class="leftDiv mx-4">
+                    <div class="imgOne">
+                        <img alt="" src="/img/home/pulpfiction.png">
+                        <div class="align">
+                            <h2>Pulp Fiction</h2>
+                            <p>Cliquez pour découvrir le film</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="d-flex flex-column px-4 secondDiv">
+
+                    <div class="d-flex topDivs">
+                        <a href="" class="rightDivs">
+                            <div class="imgEight">
+                                <img alt="" src="/img/home/avatar.png">
+                                <div class="align">
+                                    <h2>Avatar</h2>
+                                    <p>Cliquez pour découvrir le film</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="" class="rightDivs">
+                            <div class="imgEight">
+                                <img alt="" src="/img/home/avatar.png">
+                                <div class="align">
+                                    <h2>Avatar</h2>
+                                    <p>Cliquez pour découvrir le film</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="" class="rightDivs">
+                            <div class="imgEight">
+                                <img alt="" src="/img/home/joker.png">
+                                <div class="align">
+                                    <h2>Joker</h2>
+                                    <p>Cliquez pour découvrir le film</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="" class="rightDivs">
+                            <div class="imgEight">
+                                <img alt="" src="/img/home/le_discours_dun_roi_affiche.png">
+                                <div class="align">
+                                    <h2>Le discours d'un roi</h2>
+                                    <p>Cliquez pour découvrir le film</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="d-flex">
+                        <a href="" class="rightDivs">
+                            <div class="imgEight">
+                                <img alt="" src="/img/home/toystory.png">
+                                <div class="align">
+                                    <h2>Toy Story</h2>
+                                    <p>Cliquez pour découvrir le film</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="" class="rightDivs">
+                            <div class="imgEight">
+                                <img alt="" src="/img/home/thepaintedveil.png">
+                                <div class="align">
+                                    <h2>Le voile des illusions</h2>
+                                    <p>Cliquez pour découvrir le film</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="" class="rightDivs">
+                            <div class="imgEight">
+                                <img alt="" src="/img/home/matrix.png">
+                                <div class="align">
+                                    <h2>Matrix Résurrection</h2>
+                                    <p>Cliquez pour découvrir le film</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="" class="rightDivs">
+                            <div class="imgEight">
+                                <img alt="" src="/img/home/Le_Temoin_du_mal.png">
+                                <div class="align">
+                                    <h2>Le témoin du mal</h2>
+                                    <p>Cliquez pour découvrir le film</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
