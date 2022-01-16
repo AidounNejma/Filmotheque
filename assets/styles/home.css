@@ -106,3 +106,33 @@
 }
 /* Fin Vue Carousel */
 /* ---------------------------------------------------------------------------------- */
+/* Contenu */
+.linksInfo{
+    color: var(--main-greenblue) !important;
+    font-weight: bold;
+}
+
+.linksInfo:hover{
+    color: var(--main-darkgreen) !important;
+    transition: 0.5s;
+}
+
+.news{
+    background-color: var(--main-darkgreen);
+}
+
+.imgOne{
+    width: 285px;
+}
+
+.imgEight{
+    width: 25%;
+}
+
+.firstDiv{
+    width: 40%;
+}
+
+.secondDiv{
+    width: 60%;
+}

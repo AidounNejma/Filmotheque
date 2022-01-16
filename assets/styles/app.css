@@ -33,6 +33,18 @@ a{
     transition: 0.5s;
 }
 
+.logo{
+    width: 80px;
+}
+
+.logoHeader{
+    position: absolute;
+    bottom: -8px;
+}
+
+.logoAuthenticate{
+    width: 100%;
+}
 /* Fin Général */
 
 /* -------------------------------------------------------------------- */
@@ -156,5 +168,5 @@ a{
     margin: 0 10%;
     background-color: var(--main-grey);
     overflow:hidden;
-    padding: 0px 10px;
+    padding: 0;
 }
