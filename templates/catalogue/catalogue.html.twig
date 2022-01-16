@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catalogue | Filmothèque{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('catalogue') }}
+{% endblock %} 
+
+{% block body %}
+    {% include "./components/_second_nav.html.twig" %}
+    
+    <div id="search"></div>
+    
+    <div id="catalogueNav"></div>
+    
+    <section class="d-flex">
+        <div id="dropdown"></div>
+    </section>
+
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('catalogue') }}
+    {% endblock %}
+{% endblock %}

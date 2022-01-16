@@ -1,0 +1,35 @@
+.linksCatalogue{
+    color: var(--main-greenblue);
+    font-weight: bold;
+}
+
+.linksCatalogue:hover{
+    color: var(--main-black);
+    transition: 0.5s;
+}
+
+.dropdownMenu{
+    background-color: #efefef;
+    width: 30%;
+    padding: 2%;
+}
+
+.NavigationLevel__parent{
+    color: var(--main-greenblue);
+    font-weight: bold;
+}
+
+.NavigationLevel__children{
+    color: var(--main-black);
+    font-weight: 500;
+}
+
+.NavigationItem:hover{
+    color: var(--main-greenblue);
+    transition: 0.5s;
+}
+
+.titleDropdown{
+    color: #7a7878;
+    font-weight: 400;
+}
