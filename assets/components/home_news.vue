@@ -13,9 +13,8 @@
                     </div>
                 </a>
 
-                <div class="d-flex flex-column px-4 secondDiv">
+                <div class="d-flex flex-wrap px-4 secondDiv">
 
-                    <div class="d-flex topDivs">
                         <a href="" class="rightDivs">
                             <div class="imgEight">
                                 <img alt="" src="/img/home/avatar.png">
@@ -55,8 +54,7 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
-                    <div class="d-flex">
+
                         <a href="" class="rightDivs">
                             <div class="imgEight">
                                 <img alt="" src="/img/home/toystory.png">
@@ -96,7 +94,6 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
 
                 </div>
             </div>

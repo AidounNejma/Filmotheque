@@ -139,12 +139,18 @@
 .rightDivs{
     width: 25%;
     height: 100%;
-    position: relative;
+    padding: 2%;
 }
 
 /* Fin des deux sections des images */
 
 .imgOne img{
+    width: 100%;
+    height: 100%;
+}
+
+.imgEight{
+    position: relative;
     width: 100%;
     height: 100%;
 }
@@ -176,6 +182,7 @@
 }
 .align h2{
     color: white;
+    font-size: 1.5rem;
     font-weight: 300;
     padding: 30px 0 0 0;
     transition: all 0.2s ease-in-out;
