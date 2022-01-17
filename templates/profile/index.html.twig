@@ -2,13 +2,18 @@
 
 {% block title %}Votre profil | Filmothèque{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('profile') }}
+{% endblock %} 
+
 {% block body %}
     {% include "./components/_second_nav.html.twig" %}
 
     <section style="background-color: #003333;" class="pt-5">
         <div class="container py-5">
-
             <div class="row">
+                
                 <div class="col-lg-4">
                     <div class="card mb-4">
                         <div class="card-body text-center">
@@ -23,6 +28,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <h2 class="text-center pt-2 pb-3">Vos informations</h2>
+                            
                             <div class="row">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Prénom</p>
@@ -31,8 +37,10 @@
                                     <p class="text-muted mb-0">Jean</p>
                                 </div>
                             </div>
-                        <hr>
-                        <div class="row">
+
+                            <hr>
+
+                            <div class="row">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Nom</p>
                                 </div>
@@ -40,25 +48,38 @@
                                     <p class="text-muted mb-0">Neige</p>
                                 </div>
                             </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <p class="mb-0">Email</p>
+
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Email</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">example@example.com</p>
+                                </div>
                             </div>
-                            <div class="col-sm-9">
-                                <p class="text-muted mb-0">example@example.com</p>
+
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Mot de passe</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">*************</p>
+                                </div>
                             </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <p class="mb-0">Mot de passe</p>
-                            </div>
-                            <div class="col-sm-9">
-                                <p class="text-muted mb-0">*************</p>
-                            </div>
+        
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
     </section>
+
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_link_tags('profile') }}
+    {% endblock %} 
 {% endblock %}
