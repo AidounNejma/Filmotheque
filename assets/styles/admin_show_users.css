@@ -1,0 +1,53 @@
+body{
+    background-color:#ebebebe1 !important;
+}
+
+.title{ /* Titre de la page */
+    padding-top: 7%;
+    color: var(--main-darkgreen);
+}
+
+/* Changements style du tableau */
+
+.v-table-dynamic{ /* Padding autour du tableau */
+    padding: 3% 3% 4% 3% !important;
+}
+
+.vue-input-wrap.tools-search, input.vue-input.placeholder-light.prefix{ /* barre de recherche */
+    border-radius: 15px !important;
+}
+
+input.vue-input.placeholder-light.prefix{
+    border: 1px solid var(--main-darkgreen) !important;
+}
+
+.v-table-row.flex-c.is-header.is-striped.v-show-border { /* Head du tableau */
+    background-color: var(--main-darkgreen);
+    color: var(--main-white)
+}
+
+.v-table-row.flex-c.v-show-border.is-odd { /* Lignes impaires du tableau */
+    background: #349999c5;
+}
+
+.v-table-row.flex-c.is-striped.v-show-border, .v-table-row.flex-c.v-show-border.is-odd{ /* Pour régler la hauteur des lignes du tableau */
+    height: 70px !important;
+}
+
+.v-table-row span{ /* Le texte des lignes du tableau */
+    text-align: center !important;
+}
+
+span.size-text { /* Nombre d'items par page */
+    color: white;
+}
+
+.pagination-size.flex-c-b{ /* background du nombre d'items par page */
+    background-color: var(--main-darkgreen);
+}
+
+.page-item.is-activated[data-v-94911fd8] { /* Numéro de page */
+    color: #fff;
+    border-color: var(--main-darkgreen) !important;
+    background-color: var(--main-darkgreen) !important;
+}

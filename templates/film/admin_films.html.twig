@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace Administrateur - les Films | Filmothèque{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('admin_show_films') }}
+{% endblock %} 
+
+{% block body %}
+    {% include "./components/_second_nav.html.twig" %}
+    <h1 class="text-center title">Gestion des films</h1>
+    
+    <div id="tableFilm"></div>
+
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('admin_show_films') }}
+    {% endblock %}
+{% endblock %}

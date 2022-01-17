@@ -964,10 +964,28 @@
   "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.2.tgz"
   "version" "2.11.2"
 
+"@revolist/revogrid@^3.0.98":
+  "integrity" "sha512-jtzNvqrINfUMXy/aNIVsQt99Y0vROaTFQLnpG9aQ8ojFx2bLvsv53qknAtwxiv4o0GfXUV6pzcMQnSkKQPLpHA=="
+  "resolved" "https://registry.npmjs.org/@revolist/revogrid/-/revogrid-3.0.98.tgz"
+  "version" "3.0.98"
+
+"@revolist/vue-datagrid@^3.0.98":
+  "integrity" "sha512-QlCZrPLJadrwJSGfRKyEjRAExxftA/v144Z2t8fNCvDhygBclkt/XoBxQaHlpI4PCchxfoL9tf7eyRIjdO3Brw=="
+  "resolved" "https://registry.npmjs.org/@revolist/vue-datagrid/-/vue-datagrid-3.0.98.tgz"
+  "version" "3.0.98"
+  dependencies:
+    "@revolist/revogrid" "^3.0.98"
+    "@stencil/core" "^2.6.0"
+
 "@sindresorhus/is@^4.0.0":
   "integrity" "sha512-BrzrgtaqEre0qfvI8sMTaEvx+bayuhPmfe2rfeUGPPHYr/PLxCOqkOe4TQTDPb+qcqgNcsAtXV/Ew74mcDIE8w=="
   "resolved" "https://registry.npmjs.org/@sindresorhus/is/-/is-4.2.1.tgz"
   "version" "4.2.1"
+
+"@stencil/core@^2.6.0":
+  "integrity" "sha512-u24TZ+FEvjnZt5ZgIkLjLpUNsO6Ml3mUZqwmqk81w6RWWz75hgB5p4RFI5rvuErFeh2xvMIGo+pNdG24XUBz1A=="
+  "resolved" "https://registry.npmjs.org/@stencil/core/-/core-2.12.1.tgz"
+  "version" "2.12.1"
 
 "@symfony/stimulus-bridge@^3.0.0":
   "integrity" "sha512-efoQP0DWIXNOh9zPN5JUEokTMQyFBbVO5ioUQIRRAw9y0Qj6bv+mshAnljUzI7xupTZu9zNH4XjY1d0tnl/n9A=="
@@ -5159,6 +5177,11 @@
   "resolved" "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
   "version" "4.1.1"
 
+"lodash.trim@^4.5.1":
+  "integrity" "sha1-NkJefukL5KpeJ7zruFt9EepHqlc="
+  "resolved" "https://registry.npmjs.org/lodash.trim/-/lodash.trim-4.5.1.tgz"
+  "version" "4.5.1"
+
 "lodash.union@^4.6.0":
   "integrity" "sha1-SLtQiECfFvGCFmZkHETdGqrjzYg="
   "resolved" "https://registry.npmjs.org/lodash.union/-/lodash.union-4.6.0.tgz"
@@ -8058,6 +8081,13 @@
     "vue-hot-reload-api" "^2.3.0"
     "vue-style-loader" "^4.1.0"
 
+"vue-scrollbar-simple@0.0.10":
+  "integrity" "sha512-NvT20SmJ/DH19FyqPRViOfdZ4BKFI165mXRC3nMEryCYq2xaB1+8OvKGBY44Jpr/j1P08MirTPVJKl/B3DT+vw=="
+  "resolved" "https://registry.npmjs.org/vue-scrollbar-simple/-/vue-scrollbar-simple-0.0.10.tgz"
+  "version" "0.0.10"
+  dependencies:
+    "lodash.throttle" "^4.1.1"
+
 "vue-style-loader@^4.1.0":
   "integrity" "sha512-sFuh0xfbtpRlKfm39ss/ikqs9AbKCoXZBpHeVZ8Tx650o0k0q/YCM7FRvigtxpACezfq6af+a7JeqVTWvncqDg=="
   "resolved" "https://registry.npmjs.org/vue-style-loader/-/vue-style-loader-4.1.3.tgz"
@@ -8065,6 +8095,15 @@
   dependencies:
     "hash-sum" "^1.0.2"
     "loader-utils" "^1.0.2"
+
+"vue-table-dynamic@^0.4.10":
+  "integrity" "sha512-TaG+qyMPjVBtYMeYzuc9ly2KTUJ7b/Vyqige6xwD5RgSUpgdq1i6vxg0SAPep3V0/dVP4vmggpfo/8GNaYpQtg=="
+  "resolved" "https://registry.npmjs.org/vue-table-dynamic/-/vue-table-dynamic-0.4.10.tgz"
+  "version" "0.4.10"
+  dependencies:
+    "lodash.throttle" "^4.1.1"
+    "lodash.trim" "^4.5.1"
+    "vue-scrollbar-simple" "0.0.10"
 
 "vue-template-compiler@^2.6.14":
   "integrity" "sha512-ODQS1SyMbjKoO1JBJZojSw6FE4qnh9rIpUZn2EUT86FKizx9uH5z6uXiIrm4/Nb/gwxTi/o17ZDEGWAXHvtC7g=="

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace Administrateur - Les utilisateurs | Filmothèque{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('admin_show_users') }}
+{% endblock %} 
+
+{% block body %}
+    {% include "./components/_second_nav.html.twig" %}
+    <h1 class="text-center title">Gestion des utilisateurs</h1>
+    
+    <div id="tableUser"></div>
+
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('admin_show_users') }}
+    {% endblock %}
+{% endblock %}

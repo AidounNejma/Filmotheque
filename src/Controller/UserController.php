@@ -8,6 +8,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
@@ -54,5 +55,13 @@ class UserController extends AbstractController
             "registrationForm"=>$form->createView()
         ]); 
         
+    }
+
+    #[Route('/gestion-des-utilisateurs.html', name: 'users_admin')]
+    #[IsGranted("ROLE_ADMIN")]
+    public function showUsers(): Response
+    {
+        return $this->render('user/admin_users.html.twig', [
+        ]);
     }
 }
