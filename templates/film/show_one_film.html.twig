@@ -10,6 +10,7 @@
 {% block body %}
     {% include "./components/_second_nav.html.twig" %}
     <div id="search"></div>
+    
     <!-- Bootstrap Static Header -->
     <div class="filmHeader bg-cover text-white">
         <div class="container py-5 d-flex infoFilm">
@@ -25,10 +26,40 @@
                     <p>Fantastique</p>
                 </div>
             </div>
-            <a href="#" class="text-white linkPlay"><i class="fal fa-play-circle"></i> Regarder la bande annonce</a>
+
         </div>
+
+        <a href="#" class="text-white linkPlay"><i class="fal fa-play-circle"></i> Regarder la bande annonce</a>
+        <a href="" class="shop">Réserver</a>
     </div>
 
+    <!-- Bande d'information du film -->
+    <div class="d-flex mainDivInfo">
+        <div class="d-flex flex-column leftDivInfo">
+            <div class="d-flex justify-content-between leftDivLinks">
+                <button>Synopsis</button>
+                <button>Equipe technique</button>
+                <button>Détails</button>
+            </div>
+            <p id="filmContent"> 
+            Malgré sa paralysie, Jake Sully, un ancien marine immobilisé dans un fauteuil roulant, 
+            est resté un combattant au plus profond de son être.  Il est recruté pour se rendre à des années-lumière de la Terre,
+            sur Pandora, où de puissants groupes industriels exploitent un minerai rarissime destiné à résoudre la crise énergétique 
+            sur Terre.
+            </p>
+        </div>
+        <div class="trait"></div>
+        <div class="d-flex flex-column rightDivInfo">
+            <h6>Thèmes</h6>
+            <div class="d-flex justify-content-between genreWords">
+                <p>Extraterrestres</p>
+                <p>Amour</p>
+                <p>Science-Fiction</p>
+                <p>Dystopie</p>
+                <p>Bataille</p>
+            </div>
+        </div>
+    </div>
 
 
     {% block javascripts %}

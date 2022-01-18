@@ -26,17 +26,107 @@ div#search-autocomplete { /* input de la barre de recherche */
     left: 5%;
 }
 
-.linkPlay{
+.linkPlay{ /* bouton "regarder la bande annonce"*/
     position: absolute !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    top: 80%;
+    width: 20%;
+    top: 108%;
     left: 0;
     right: 0;
     text-align: center;
 }
 
-.linkPlay:hover{
-    color: var(--main-greenblue) !important;
+.linkPlay:hover{ /* bouton "regarder la bande annonce" au hover */
+    color: var(--main-white) !important;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #d3dada,
+        0 0 82px #d2dbdb,
+        0 0 92px #97b6b6,
+        0 0 102px #97b6b6,
+        0 0 151px #97b6b6;
     transition: 0.5s;
+}
+
+.shop { /* Bouton "réserver" du header */
+    position: absolute;
+    right: 11%;
+    bottom: 0;
+    padding: 1% 2%;
+    border-radius: 11px;
+    background-color: var(--main-greenblue);
+}
+
+.shop:hover{ /* bouton "réserver" du header au hover */
+    background-color: var(--main-darkgreen);
+    color: #ffffff !important;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #97b6b6,
+        0 0 82px #97b6b6,
+        0 0 92px #97b6b6,
+        0 0 102px #97b6b6,
+        0 0 151px #97b6b6;
+    transition: 0.5s;
+}
+/* Fin Header */
+
+/* Info */
+
+.mainDivInfo{ /* Grosse section qui englobe les deux */
+    width: 100%;
+}
+
+.leftDivInfo, .rightDivInfo{ /* sections gauche et droite */
+    width: 50%;
+    padding: 2%;
+}
+
+.trait{ /* trait de séparation des deux sections */
+    border: 1px solid #BAB8B8;
+    transform: rotate(180deg);
+    margin: 3% 2%;
+}
+
+.mainDivInfo p{ /* paragraphes de la grosse section d'information */
+    text-align: center;
+    padding-top: 5%;
+    font-weight: lighter;
+}
+
+.leftDivLinks{ /* les boutons de la section de gauche */
+    padding: 0 6%;
+    font-weight: bold;
+    color: var(--main-greenblue);
+}
+
+.leftDivLinks button{ /* enlever toute l'apparence des boutons */
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.leftDivLinks button:hover{ /* les boutons de la section de gauche au hover */
+    color: #000;
+    transition: 0.5s;
+}
+
+
+.leftDivLinks button:focus{ /* les boutons de la section de gauche au clic */
+    color: #000;
+    text-decoration: underline;
+}
+
+.genreWords p{ /* Les thèmes du film */
+    color: var(--main-greenblue);
+    font-weight: 400 !important;
 }
