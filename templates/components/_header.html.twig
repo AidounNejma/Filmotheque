@@ -1,27 +1,17 @@
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Navbar brand -->
-            <a class="navbar-brand mt-2 mt-lg-0 headerLinks" href="{{ path('home') }}"><img src="/img/home/logo.png" alt="logo" class="logo logoHeader"/></a>
-        </div>
-        <!-- Collapsible wrapper -->
-
-        <!-- Right elements -->
-        <div class="d-flex align-items-center">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+    <a class="navbar-brand" href="{{ path('home') }}"><img src="/img/home/logo.png" alt="logo" class="logo logoHeader"/></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
             {% if app.user %}
-                <li class="nav-item">
-					<a href="{{ path("profile") }}" class="nav-link text-white headerLinks">Profil</a>
-				</li>
-                <li class="nav-item">
-					<a href="{{ path("app_logout") }}" class="nav-link text-white headerLinks">Déconnexion</a>
-				</li>
-                {% else %}
+                <li class="nav-item mr-auto">
+                    <a class="nav-link text-white headerLinks" href="{{ path("profile") }}">Profil</a>
+                </li>
+            {% else %}
                 <li class="nav-item">
                     <a class="nav-link text-white headerLinks" href="{{ path('register') }}">Inscription</a>
                 </li>
@@ -30,22 +20,24 @@
                 </li>
             {% endif %}
             {% if is_granted("ROLE_ADMIN") %}
-                <div class="dropdown">
-                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Gestion
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white headerLinks" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Gestions
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{ path('films_admin') }}">Gestion des films</a>
                         <a class="dropdown-item" href="{{ path('users_admin') }}">Gestion des utilisateurs</a>
                         <a class="dropdown-item" href="#">Ajouter un film</a>
                     </div>
-                </div>
+                </li>
             {% endif %}
-            </ul>
-        </div>
-        <!-- Right elements -->
-
+            {% if app.user %}
+                <li class="nav-item">
+                    <a class="nav-link float-right text-white headerLinks" href="{{ path("app_logout") }}">Déconnexion</a>
+                </li>
+            {% endif %}
+        </ul>
     </div>
-<!-- Container wrapper -->
+
 </nav>
 <!-- Navbar -->

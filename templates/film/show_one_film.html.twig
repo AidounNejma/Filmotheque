@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir un film | Filmothèque{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('film_show_one') }}
+{% endblock %} 
+
+{% block body %}
+    {% include "./components/_second_nav.html.twig" %}
+    <!-- Bootstrap Static Header -->
+    <div class="filmHeader bg-cover text-white">
+        <div class="container py-5 text-center">
+            
+        </div>
+    </div>
+
+
+
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('film_show_one') }}
+    {% endblock %}
+{% endblock %}

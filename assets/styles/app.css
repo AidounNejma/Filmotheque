@@ -38,8 +38,7 @@ a{
 }
 
 .logoHeader{
-    position: absolute;
-    bottom: -8px;
+    position: relative;
 }
 
 .logoAuthenticate{

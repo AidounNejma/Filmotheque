@@ -1,0 +1,8 @@
+.filmHeader{
+    background: linear-gradient(180deg, #000000 0%, #000000 22.4%, rgba(0, 0, 0, 0.08) 85.94%, rgba(0, 0, 0, 0) 100%),
+    url(https://geeko.lesoir.be/wp-content/uploads/2020/05/avatar.jpg)
+                ; 
+    background-size: cover; 
+    height:600px;
+}
+

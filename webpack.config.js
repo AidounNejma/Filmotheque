@@ -37,6 +37,7 @@ Encore
     .addEntry('profile', './assets/profile.js')
     .addEntry('admin_show_films', './assets/admin_show_films.js')
     .addEntry('admin_show_users', './assets/admin_show_users.js')
+    .addEntry('film_show_one', './assets/film_show_one.js')
 
     
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
@@ -89,7 +90,7 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    .autoProvidejQuery()
 ;
 
 module.exports = Encore.getWebpackConfig();
