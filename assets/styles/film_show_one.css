@@ -1,8 +1,42 @@
-.filmHeader{
+
+.filmHeader{/* Header contenant l'image du film */
     background: linear-gradient(180deg, #000000 0%, #000000 22.4%, rgba(0, 0, 0, 0.08) 85.94%, rgba(0, 0, 0, 0) 100%),
-    url(https://geeko.lesoir.be/wp-content/uploads/2020/05/avatar.jpg)
-                ; 
+                url(https://geeko.lesoir.be/wp-content/uploads/2020/05/avatar.jpg); 
     background-size: cover; 
-    height:600px;
+    height:700px;
 }
 
+.mask.d-flex.justify-content-center.align-items-center.searchBar { /* Bar de recherche */
+    background-color: none !important;
+    position: absolute !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+div#search-autocomplete { /* input de la barre de recherche */
+    width: 35%;
+}
+
+.infoFilm { /* Div contenant image + info du film (à gauche du header) */
+    position: absolute;
+    top: 75%;
+    left: 5%;
+}
+
+.linkPlay{
+    position: absolute !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    top: 80%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.linkPlay:hover{
+    color: var(--main-greenblue) !important;
+    transition: 0.5s;
+}

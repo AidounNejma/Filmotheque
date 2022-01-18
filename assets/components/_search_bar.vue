@@ -1,5 +1,5 @@
 <template>
-        <div class="mask d-flex justify-content-center align-items-center searchBar" style="background-color: #003333;height: 70px;">
+        <div class="mask d-flex justify-content-center align-items-center searchBar">
             <div id="search-autocomplete" class="form-outline">
                 <input type="search" id="form1" class="form-control" placeholder="Rechercher" />
             </div>

@@ -9,10 +9,23 @@
 
 {% block body %}
     {% include "./components/_second_nav.html.twig" %}
+    <div id="search"></div>
     <!-- Bootstrap Static Header -->
     <div class="filmHeader bg-cover text-white">
-        <div class="container py-5 text-center">
+        <div class="container py-5 d-flex infoFilm">
             
+            <img src="img/home/avatar.png" class="miniImg px-4">
+            
+            <div class="d-flex flex-column">
+                <h3>Avatar</h3>
+                <h5>De James Cameron (2009)</h5>
+                <div class="d-flex">
+                    <p>2h20</p>
+                    <p class="px-4">Etats-Unis</p>
+                    <p>Fantastique</p>
+                </div>
+            </div>
+            <a href="#" class="text-white linkPlay"><i class="fal fa-play-circle"></i> Regarder la bande annonce</a>
         </div>
     </div>
 
