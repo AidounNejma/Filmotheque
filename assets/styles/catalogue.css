@@ -1,6 +1,13 @@
+
 .linksCatalogue{
     color: var(--main-greenblue);
     font-weight: bold;
+
+    background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .linksCatalogue:hover{
