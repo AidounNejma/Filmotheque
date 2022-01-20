@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class FilmController extends AbstractController
 {
-    public function __construct(HttpClientInterface $client)
+    public function __construct(HttpClientInterface $client, private ManagerRegistry $doctrine)
     {
         $this->client = $client;
     }
@@ -93,17 +93,17 @@ class FilmController extends AbstractController
             $content = $response->toArray();
             // $content = ['id' => 521583, 'name' => 'symfony-docs', ...]
     
-            return $content["results"];
+            return $content;
         }
 
     /* Route pour ajouter un film au clic */
-    #[Route('/{idApi}', name: 'film_added', methods:["GET"] )]
+    #[Route('/{idApi}', name: 'film_added', methods:["GET", "POST"] )]
     #[IsGranted("ROLE_ADMIN")]
-    public function saveFilmDB(Request $request): Response
+    public function saveFilmDB(Request $request, ManagerRegistry $doctrine): Response
     {
         #Récupération des données du film
-        echo '<script>console.log('.json_encode($request->query->get("idApi")).')</script>';
-        $f = $this->fetchFilmById($request->query->get("idApi"));
+       /*  echo '<script>console.log('.json_encode($request->attributes->get('idApi')).')</script>'; */
+        $f = $this->fetchFilmById($request->attributes->get('idApi'));
 
         # Copie de la data sélectionnée dans la BDD
         $newFilm = new Film();
@@ -113,15 +113,15 @@ class FilmController extends AbstractController
         $newFilm->setReleasedAt(new \DateTime($f['release_date']));
         $newFilm->setPictures($f['poster_path']);
         /* $newFilm->setActors($f['actors']); */
-       /*  $newFilm->setGenre($f['genre']); */
-        $newFilm->setCountry($f['country']);
-        $newFilm->setDuration($f['duration']);
+        /* $newFilm->setGenre($f['genres']['name']); */
+       /*  $newFilm->setCountry($f['production_countries']['name']); */
+        $newFilm->setDuration($f['runtime']);
 
         # Sauvegarde dans la BDD
-       /*  $doctrine = $this->doctrine->getManager();
+        $doctrine = $this->doctrine->getManager();
         $doctrine->persist($newFilm);
         $doctrine->flush();
- */
+
         # Redirection
         return $this->redirectToRoute('home');
 

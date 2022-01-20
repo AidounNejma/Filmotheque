@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\FilmRepository;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
@@ -25,23 +26,32 @@ class Film
     #[ORM\Column(type: 'string', length: 999)]
     private $summary;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $actors;
+    #[ORM\Column(type: 'string', length: 255, options: ['default' => ""])]
+    private $actors = "";
 
     #[ORM\Column(type: 'string', length: 255)]
     private $pictures;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $genre;
+    #[ORM\Column(type: 'string', length: 255, options: ['default' => ""])]
+    private $genre = "";
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $country;
+    #[ORM\Column(type: 'string', length: 255, options: ['default' => ""])]
+    private $country ="";
 
     #[ORM\Column(type: 'integer')]
     private $duration;
 
     #[ORM\Column(type: 'date')]
     private $releasedAt;
+
+
+    public function __construct()
+    {
+        $this->createdAt = new DateTime();
+        $this->updatedAt = new DateTime();
+    }
+
+
 
     public function getId(): ?int
     {
@@ -151,7 +161,6 @@ class Film
 
     public function setReleasedAt(\DateTimeInterface $releasedAt): self
     {
-       
         $this->releasedAt = $releasedAt;
 
         return $this;
