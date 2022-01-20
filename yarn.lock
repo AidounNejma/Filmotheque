@@ -8081,6 +8081,11 @@
     "vue-hot-reload-api" "^2.3.0"
     "vue-style-loader" "^4.1.0"
 
+"vue-router@^3.5.3":
+  "integrity" "sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg=="
+  "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-3.5.3.tgz"
+  "version" "3.5.3"
+
 "vue-scrollbar-simple@0.0.10":
   "integrity" "sha512-NvT20SmJ/DH19FyqPRViOfdZ4BKFI165mXRC3nMEryCYq2xaB1+8OvKGBY44Jpr/j1P08MirTPVJKl/B3DT+vw=="
   "resolved" "https://registry.npmjs.org/vue-scrollbar-simple/-/vue-scrollbar-simple-0.0.10.tgz"

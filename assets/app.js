@@ -19,8 +19,6 @@ require('bootstrap');
 
 
 
-
-
 /* API intersection observer */
 /* Animation des blocs  */
 

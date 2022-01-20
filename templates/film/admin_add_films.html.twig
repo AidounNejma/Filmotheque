@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace Administrateur - Ajouter un film | Filmothèque{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('add_film') }}
+{% endblock %} 
+
+{% block body %}
+    
+    <div class="containers">
+        {% for film in films %}
+            <div class="film">
+                <a href="{{path('film_added', {'idApi': film.idApi})}}" class="item">
+                    <div class="img">
+                        <img src="https://www.themoviedb.org/t/p/w440_and_h660_face/{{film.pictures}}"/>
+                        <div class="align">
+                            <h2>{{film.title}}</h2>
+                            <p>{{film.summary}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+    {% block javascripts %}
+        {{ parent() }}
+        {{ encore_entry_script_tags('add_film') }}
+    {% endblock %}
+
+{% endblock %}

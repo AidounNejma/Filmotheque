@@ -4,7 +4,7 @@
         <a href="#" class="text-white nav-link secondNavLinks">TOP</a>
         <a href="#" class="text-white nav-link secondNavLinks">SÉLECTIONS</a>
         <a href="#" class="text-white nav-link secondNavLinks">GENRE</a>
-        <a href="#" class="text-white nav-link secondNavLinks">CATALOGUE</a>
+        <a href="" class="text-white nav-link secondNavLinks">CATALOGUE</a>
     </div>
 </template>
 

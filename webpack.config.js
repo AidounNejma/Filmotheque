@@ -38,6 +38,7 @@ Encore
     .addEntry('admin_show_films', './assets/admin_show_films.js')
     .addEntry('admin_show_users', './assets/admin_show_users.js')
     .addEntry('film_show_one', './assets/film_show_one.js')
+    .addEntry('add_film', './assets/add_film.js')
 
     
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

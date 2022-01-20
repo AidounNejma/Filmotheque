@@ -84,7 +84,7 @@
         el: '#carousel',
         components: {
             agile: VueAgile 
-        } 
+        }
     });
 
 </script>

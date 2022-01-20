@@ -16,6 +16,9 @@ class Film
     #[ORM\Column(type: 'integer')]
     private $id;
 
+    #[ORM\Column(type: 'integer')]
+    private $idApi;
+
     #[ORM\Column(type: 'string', length: 255)]
     private $title;
 
@@ -43,6 +46,18 @@ class Film
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setIdApi(int $idApi): self
+    {
+        $this->idApi = $idApi;
+
+        return $this;
+    }
+
+    public function getIdApi(): ?int
+    {
+        return $this->idApi;
     }
 
     public function getTitle(): ?string
@@ -136,6 +151,7 @@ class Film
 
     public function setReleasedAt(\DateTimeInterface $releasedAt): self
     {
+       
         $this->releasedAt = $releasedAt;
 
         return $this;
