@@ -8,6 +8,7 @@
 {% endblock %} 
 
 {% block body %}
+    <h1 class="text-center">Ajouter un film</h1>
     
     <div class="containers">
         {% for film in films %}
@@ -18,6 +19,7 @@
                         <div class="align">
                             <h2>{{film.title}}</h2>
                             <p>{{film.summary}}</p>
+                            <i class="fas fa-folder-plus"></i>
                         </div>
                     </div>
                 </a>

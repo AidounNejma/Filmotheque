@@ -35,7 +35,7 @@ class FilmController extends AbstractController
         ]);
     }
 
-    /* Fetch des films */
+    /* Fetch des films pour la page Ajouter */
     public function fetchFilmsByPage(): array
     {
         $response = $this->client->request(
@@ -76,7 +76,7 @@ class FilmController extends AbstractController
         ]);
     }
 
-     /* Fetch des films */
+        /* Fetch des films par l'Id */
         public function fetchFilmById($id): array
         {
             $response = $this->client->request(
@@ -97,13 +97,13 @@ class FilmController extends AbstractController
         }
 
     /* Route pour ajouter un film au clic */
-    #[Route('/{idApi}', name: 'film_added', methods:["GET", "POST"] )]
+    #[Route('/ajouter-un-film/{idApi}', name: 'film_added', methods:["GET", "POST"] )]
     #[IsGranted("ROLE_ADMIN")]
     public function saveFilmDB(Request $request, ManagerRegistry $doctrine): Response
     {
         #Récupération des données du film
-       /*  echo '<script>console.log('.json_encode($request->attributes->get('idApi')).')</script>'; */
         $f = $this->fetchFilmById($request->attributes->get('idApi'));
+        /* echo '<script>console.log('.json_encode($request->attributes->get('idApi')).')</script>'; */
 
         # Copie de la data sélectionnée dans la BDD
         $newFilm = new Film();
@@ -122,8 +122,11 @@ class FilmController extends AbstractController
         $doctrine->persist($newFilm);
         $doctrine->flush();
 
+        # Notification de confirmation
+        $this->addFlash("success", "Le film a bien été ajouté à la BDD.");
+        
         # Redirection
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('admin_add_film');
 
     }
     

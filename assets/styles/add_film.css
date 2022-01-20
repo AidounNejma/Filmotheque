@@ -1,3 +1,13 @@
+body{
+    background: rgb(220,226,220);
+    background: linear-gradient(0deg, rgba(220,226,220,1) 13%, rgba(176,180,176,1) 42%, rgba(0,0,0,1) 100%);
+}
+
+h1{
+    color: var(--main-white);
+    padding: 2% 0;
+}
+
 .containers{
     width: 100%;
     display: flex;
@@ -19,7 +29,7 @@
 
 .align{
     text-align: center;
-    background-color: #297272d3;
+    background-color: #050505d3;
     transition: all 0.4s ease-in-out;
     position: absolute;
     width: 100%;
@@ -31,20 +41,31 @@
 
 .align p{
     color: white;
-    font-size: 14px;
-    padding: 30px 0 0 0;
+    font-size: 0.8vw;
+    border: 1px solid;
+    border-radius: 2%;
+    padding: 4%;
+    margin: 5%;
+    text-align: start;
     transition: all 0.3s linear;
     opacity: 0;
     transform: translateY(100px);
 }
 .align h2{
     color: white;
-    font-size: 1.5rem;
+    font-size: 2vw;
     font-weight: 300;
-    padding: 30px 0 0 0;
+    padding: 8% 2% 0 2%;
     transition: all 0.2s ease-in-out;
     opacity: 0;
     transform: translateY(-100px);
+}
+
+.align svg{
+    color: var(--main-white) !important;
+    position: absolute;
+    bottom: 10%;
+    font-size: 2vw;
 }
 
 .item:hover .align, .item:hover .align{
