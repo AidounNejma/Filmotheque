@@ -1,9 +1,12 @@
+/* Imports */
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import '~@fortawesome/fontawesome-free/css/regular.min.css';
 @import '~@fortawesome/fontawesome-free/css/solid.min.css';
 @import '~@fortawesome/fontawesome-free/css/brands.min.css';
 
 @import "~bootstrap/dist/css/bootstrap.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 /* -------------------------------------------------------------------- */
 /* Général */
 
@@ -27,6 +30,10 @@
     --flash-text-success: #ffffff;
     --flash-bg-warning: #d33a4b;
     --flash-text-warning: #ffffff;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
 }
 
 a{
@@ -73,14 +80,31 @@ a{
         0 0 151px #97b6b6;
     transition: 0.5s;
 }
+/* -------------------------------------------------------------------- */
+/* Search Bar */
+.searchMyFilm{ /* Conteneur du formulaire de la barre de recherche */
+    width: 35%;
+    display: flex;
+}
+.searchBar {
+    padding: 1% 0 !important;
+}
 
-.searchBar{
-    padding: 8% 0 4% 0 !important;
+.mask.d-flex.justify-content-center.align-items-center.searchBar { /* Barre de recherche */
+    background-color: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+}
+
+div#search-autocomplete { /* input de la barre de recherche */
+    width: 100%;
 }
 
 .searchBtn{
     background-color: var(--main-greenblue) !important;
 }
+
 /* Fin Nav */
 /* -------------------------------------------------------------------- */
 

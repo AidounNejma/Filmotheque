@@ -9,13 +9,45 @@
 
 {% block body %}
     {% include "./components/_second_nav.html.twig" %}
-    <div id="search"></div>
+
+    {# Search bar #}
+    <div class="mask d-flex justify-content-center align-items-center searchBar">
+        <form method="POST" class="searchMyFilm">
+            <div id="search-autocomplete" class="form-outline">
+                <input type="search" id="form1" class="form-control" name="search" placeholder="Rechercher" />
+            </div>
+            <button type="submit" class="btn btn-dark searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div>
+    {# Search bar #}
     
     <div id="catalogueNav"></div>
     
     <section class="d-flex">
+
         <div id="dropdown"></div>
+        
+        <div class="containers">
+            {% for film in films %}
+                <div class="film">
+                    <a href="{{path('show_one_film', {'id': film.id})}}" class="item">
+                        <div class="img">
+                            <img src="https://www.themoviedb.org/t/p/w440_and_h660_face/{{film.pictures}}"/>
+                            <div class="align">
+                                <h2>{{film.title}}</h2>
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
     </section>
+
+
 
     {% block javascripts %}
         {{ parent() }}

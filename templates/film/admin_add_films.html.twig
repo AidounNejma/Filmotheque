@@ -8,17 +8,62 @@
 {% endblock %} 
 
 {% block body %}
+
     <h1 class="text-center">Ajouter un film</h1>
+
+    {# Search bar #}
+    <div class="mask d-flex justify-content-center align-items-center searchBar">
+        <form method="POST" class="searchMyFilm">
+            <div id="search-autocomplete" class="form-outline">
+                <input type="search" id="form1" class="form-control" name="search" placeholder="Rechercher" />
+            </div>
+            <button type="submit" class="btn btn-dark searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div>
+    {# Search bar #}
+
+    {# Paginatation #}
+    <div class="d-flex justify-content-center py-4">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                <a class="page-link" href="{{path('admin_search_page', {'page': page - 1})}}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                </li>
+            {#  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>   #}
+                <li class="page-item">
+                <a class="page-link" href="{{path('admin_search_page', {'page': page + 1, 'search': search })}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    {# Fin Pagination #}
     
+    {# Cards films #}
     <div class="containers">
         {% for film in films %}
             <div class="film">
                 <a href="{{path('film_added', {'idApi': film.idApi})}}" class="item">
-                    <div class="img">
+                    <div class="img" style="background: url('/img/appImg/imgNotFound.jpeg');">
+                    {% if film.pictures %}
                         <img src="https://www.themoviedb.org/t/p/w440_and_h660_face/{{film.pictures}}"/>
+                    {% else %}
+                        <div ></div>
+                    {% endif %}
                         <div class="align">
                             <h2>{{film.title}}</h2>
-                            <p>{{film.summary}}</p>
+                            {% if film.summary %}
+                                <p>{{film.summary}}</p>
+                            {% endif %}
                             <i class="fas fa-folder-plus"></i>
                         </div>
                     </div>
@@ -26,8 +71,31 @@
             </div>
         {% endfor %}
     </div>
+    {# Fin cards film #}
 
-
+    {# Paginatation #}
+    <div class="d-flex justify-content-center py-4">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                <a class="page-link" href="{{path('admin_search_page', {'page': page - 1})}}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                </li>
+            {#  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>   #}
+                <li class="page-item">
+                <a class="page-link" href="{{path('admin_search_page', {'page': page + 1, 'search': search })}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    {# Fin Pagination #}
 
     {% block javascripts %}
         {{ parent() }}
