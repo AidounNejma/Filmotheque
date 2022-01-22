@@ -22,7 +22,6 @@
                 <div class="d-flex">
                     <p>{{film.duration}} minutes</p>
                     <p class="px-4">{{film.country}}</p>
-                    <p>Fantastique</p>
                 </div>
             </div>
 
@@ -37,7 +36,7 @@
         <div class="d-flex flex-column leftDivInfo">
             <div class="d-flex justify-content-between leftDivLinks">
                 <button>Synopsis</button>
-                <button>Equipe technique</button>
+                <button>Acteurs</button>
                 <button>Détails</button>
             </div>
             <p id="filmContent"> {{film.summary}}</p>
@@ -46,11 +45,7 @@
         <div class="d-flex flex-column rightDivInfo">
             <h6>Thèmes</h6>
             <div class="d-flex justify-content-between genreWords">
-                <p>Extraterrestres</p>
-                <p>Amour</p>
-                <p>Science-Fiction</p>
-                <p>Dystopie</p>
-                <p>Bataille</p>
+                <p>{{film.genre}}</p>
             </div>
         </div>
     </div>

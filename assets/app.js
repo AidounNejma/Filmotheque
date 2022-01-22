@@ -11,10 +11,14 @@ import './styles/app.css';
 // start the Stimulus application
 import 'bootstrap';
 
-/* Ajouts de ma part */
+
+
+/* Require de Jquery */
 const $ = require('jquery');
 global.$ = global.jquery = $;
+/* Appel du JS bootstrap */
 require('bootstrap');
+
 
 
 require('@fortawesome/fontawesome-free/css/all.min.css');

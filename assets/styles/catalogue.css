@@ -1,5 +1,14 @@
 /* Filtre */
+.dropdownMenu{
+    background-color: #efefef;
+    width: 30%;
+    padding: 2%;
+}
 
+.titleDropdown{
+    color: #7a7878;
+    font-weight: 400;
+}
 /* Fin filtres */
 
 /* ------------------------------------------------------------------------------- */

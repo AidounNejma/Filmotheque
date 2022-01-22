@@ -16,19 +16,25 @@
             <div id="search-autocomplete" class="form-outline">
                 <input type="search" id="form1" class="form-control" name="search" placeholder="Rechercher" />
             </div>
+
+            <select name="select">
+                <option selected>Genres :</option>
+                {% for genre in genres %}
+                    <option value="{{genre.name}}">{{genre.name}}</option>
+                {% endfor %}
+            </select>
+
             <button type="submit" class="btn btn-dark searchBtn">
                 <i class="fas fa-search"></i>
             </button>
+
         </form>
     </div>
     {# Search bar #}
     
-    {# Section qui va contenir les filtes et les films #}    
+    {# Section qui va contenir les films #}    
     <section class="d-flex">
 
-    
-        
-        
         {# Conteneur des cards #}
         <div class="containers">
             {# Cards des films #}

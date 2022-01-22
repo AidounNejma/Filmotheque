@@ -40,21 +40,29 @@ class FilmRepository extends ServiceEntityRepository
      * @return Films[] Returns an array of Film objects
      */
     
-    public function searchFilm($value)
+    public function searchFilm($value, $genre)
     {   //SELECT * FROM film as f WHERE f.title LIKE "%xxx%" ORDER BY l.title
-        return $this->createQueryBuilder('f')//le paramètre f représente la table film (comme un alias dans une requête SQL)
+        
+        if($value){
+            return $this->createQueryBuilder('f')//le paramètre f représente la table film (comme un alias dans une requête SQL)
             ->where('f.title LIKE :val')
             ->orWhere('f.actors LIKE :val')
-            ->orWhere('f.genre LIKE :val')
+            ->orWhere('f.genre LIKE :genre')
             ->setParameter('val', "%$value%")
             ->setParameter('val', "%$value%")
-            ->setParameter('val', "%$value%")
+            ->setParameter('genre', "%$genre%")
             ->orderBy('f.title', 'ASC')
-            ->orderBy('f.actors', 'ASC')
-            ->orderBy('f.genre', 'ASC')
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
+        }
+        else{
+            return $this->createQueryBuilder('f')//le paramètre f représente la table film (comme un alias dans une requête SQL)
+            ->where('f.genre LIKE :genre')
+            ->setParameter('genre', "%$genre%")
+            ->orderBy('f.title', 'ASC')
+            ->getQuery()
+            ->getResult();
+        }
     }
 
     /*

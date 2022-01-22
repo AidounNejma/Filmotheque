@@ -128,7 +128,7 @@ class FilmController extends AbstractController
             $genre = "";
 
             foreach ($contentGenre as $g) {
-                $genre .= $g['name'].",";
+                $genre .= $g['name'].", ";
             }
 
             $content['genres'] = $genre;
@@ -147,7 +147,7 @@ class FilmController extends AbstractController
             $actors = "";
 
             for($i = 0; $i < 5 ; $i++){
-                $actors .= $contentActors[$i]['name'].",";
+                $actors .= $contentActors[$i]['name'].", ";
             }
 
             $content['actors'] = $actors;
@@ -167,9 +167,11 @@ class FilmController extends AbstractController
 
         #Condition pour savoir si le film est déjà présent dans BDD
         if(!$reqSQL){
+            
             #Récupération des données du film
             $f = $this->fetchFilmById($request->attributes->get('idApi'));
             /* echo '<script>console.log('.json_encode($f).')</script>';*/
+
             # Copie de la data sélectionnée dans la BDD
             $newFilm = new Film();
             $newFilm->setIdApi($f['id']);
