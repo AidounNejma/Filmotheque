@@ -1,49 +1,5 @@
 /* Filtre */
-.linksCatalogue{
-    color: var(--main-greenblue);
-    font-weight: bold;
-    background: none;
-	border: none;
-	padding: 0;
-	cursor: pointer;
-	outline: inherit;
-}
 
-.linksCatalogue:hover{
-    color: var(--main-black);
-    transition: 0.5s;
-}
-
-.linksCatalogue:focus {
-    color: black;
-    text-decoration: underline;
-}
-
-.dropdownMenu{
-    background-color: #efefef;
-    width: 30%;
-    padding: 2%;
-}
-
-.titleDropdown{
-    color: #7a7878;
-    font-weight: 400;
-}
-
-.NavigationLevel__parent{
-    color: var(--main-greenblue);
-    font-weight: bold;
-}
-
-.NavigationLevel__children{
-    color: var(--main-black);
-    font-weight: 500;
-}
-
-.NavigationItem:hover{
-    color: var(--main-greenblue);
-    transition: 0.5s;
-}
 /* Fin filtres */
 
 /* ------------------------------------------------------------------------------- */

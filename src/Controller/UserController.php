@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserFormType;
+use App\Repository\UserRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -59,9 +60,10 @@ class UserController extends AbstractController
 
     #[Route('/gestion-des-utilisateurs.html', name: 'users_admin')]
     #[IsGranted("ROLE_ADMIN")]
-    public function showUsers(): Response
+    public function showUsers(UserRepository $user): Response
     {
         return $this->render('user/admin_users.html.twig', [
+            "users" => $user
         ]);
     }
 }

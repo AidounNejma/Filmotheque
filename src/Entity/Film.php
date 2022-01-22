@@ -5,10 +5,12 @@ namespace App\Entity;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\FilmRepository;
+use Doctrine\ORM\Mapping\UniqueConstraint;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 
 #[ORM\Entity(repositoryClass: FilmRepository::class)]
+#[UniqueConstraint(name: "idApi", columns: ["id_api"])]
 class Film
 {
     use TimestampableEntity;

@@ -44,8 +44,14 @@ class FilmRepository extends ServiceEntityRepository
     {   //SELECT * FROM film as f WHERE f.title LIKE "%xxx%" ORDER BY l.title
         return $this->createQueryBuilder('f')//le paramètre f représente la table film (comme un alias dans une requête SQL)
             ->where('f.title LIKE :val')
+            ->orWhere('f.actors LIKE :val')
+            ->orWhere('f.genre LIKE :val')
+            ->setParameter('val', "%$value%")
+            ->setParameter('val', "%$value%")
             ->setParameter('val', "%$value%")
             ->orderBy('f.title', 'ASC')
+            ->orderBy('f.actors', 'ASC')
+            ->orderBy('f.genre', 'ASC')
             ->getQuery()
             ->getResult()
         ;

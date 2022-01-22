@@ -23,13 +23,15 @@
     </div>
     {# Search bar #}
     
-    <div id="catalogueNav"></div>
-    
+    {# Section qui va contenir les filtes et les films #}    
     <section class="d-flex">
 
-        <div id="dropdown"></div>
+    
         
+        
+        {# Conteneur des cards #}
         <div class="containers">
+            {# Cards des films #}
             {% for film in films %}
                 <div class="film">
                     <a href="{{path('show_one_film', {'id': film.id})}}" class="item">
@@ -43,7 +45,9 @@
                     </a>
                 </div>
             {% endfor %}
+            {# Fin Cards des films #}
         </div>
+        {# Fin Conteneur des cards #}
 
     </section>
 

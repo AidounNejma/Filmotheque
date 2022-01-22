@@ -11,6 +11,18 @@
 
     <h1 class="text-center">Ajouter un film</h1>
 
+    {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+    {% endfor %}
+
+    {% for message in app.flashes('error') %}
+            <div class="alert alert-danger">
+                {{ message }}
+            </div>
+    {% endfor %}
+
     {# Search bar #}
     <div class="mask d-flex justify-content-center align-items-center searchBar">
         <form method="POST" class="searchMyFilm">

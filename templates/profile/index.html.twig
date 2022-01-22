@@ -10,21 +10,21 @@
 {% block body %}
     {% include "./components/_second_nav.html.twig" %}
 
-    <section style="background-color: #003333;" class="pt-5">
-        <div class="container py-5">
-            <div class="row">
+    <section style="background-color: #003333;" class="mySection">
+        <div class="container myContainer">
+            <div class="flex-column justify-content-center">
                 
-                <div class="col-lg-4">
+                <div class="col-lg-4 mx-auto">
                     <div class="card mb-4">
                         <div class="card-body text-center">
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                            <h5 class="my-3">Jean Neige</h5>
+                            <h5 class="my-3">{{app.user.firstName}} {{app.user.lastName}}</h5>
                             <p class="text-muted mb-4">Statut: utilisateur</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-8">
+                <div class="col-lg-6  mx-auto">
                     <div class="card mb-4">
                         <div class="card-body">
                             <h2 class="text-center pt-2 pb-3">Vos informations</h2>
@@ -34,7 +34,7 @@
                                     <p class="mb-0">Prénom</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <p class="text-muted mb-0">Jean</p>
+                                    <p class="text-muted mb-0">{{app.user.firstName}}</p>
                                 </div>
                             </div>
 
@@ -45,7 +45,7 @@
                                     <p class="mb-0">Nom</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <p class="text-muted mb-0">Neige</p>
+                                    <p class="text-muted mb-0">{{app.user.lastName}}</p>
                                 </div>
                             </div>
 
@@ -56,7 +56,7 @@
                                     <p class="mb-0">Email</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <p class="text-muted mb-0">example@example.com</p>
+                                    <p class="text-muted mb-0">{{app.user.email}}</p>
                                 </div>
                             </div>
 

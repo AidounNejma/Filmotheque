@@ -13,8 +13,9 @@ import 'bootstrap';
 
 /* Ajouts de ma part */
 const $ = require('jquery');
-global.$ = global.jQuery = $;
+global.$ = global.jquery = $;
 require('bootstrap');
+
 
 require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');

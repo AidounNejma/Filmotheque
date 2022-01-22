@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Film;
+use App\Repository\FilmRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 class FilmController extends AbstractController
 {
@@ -112,52 +114,89 @@ class FilmController extends AbstractController
         /* Fetch des films par l'Id */
     public function fetchFilmById($id): array
         {
-        $response = $this->client->request(
-            'GET',
-            "https://api.themoviedb.org/3/movie/{$id}?api_key=5daff8553d854c2631ec780f6d5b10d6&language=fr"
-        );
-    
-        $statusCode = $response->getStatusCode();
-        // $statusCode = 200
-        $contentType = $response->getHeaders()['content-type'][0];
-        // $contentType = 'application/json'
-        $content = $response->getContent();
-        // $content = '{"id":521583, "name":"symfony-docs", ...}'
-        $content = $response->toArray();
-        // $content = ['id' => 521583, 'name' => 'symfony-docs', ...]
-    
-        return $content;
+            $response = $this->client->request(
+                'GET',
+                "https://api.themoviedb.org/3/movie/{$id}?api_key=5daff8553d854c2631ec780f6d5b10d6&language=fr"
+            );
+
+            $content = $response->getContent();
+            // $content = '{"id":521583, "name":"symfony-docs", ...}'
+            $content = $response->toArray();
+            // $content = ['id' => 521583, 'name' => 'symfony-docs', ...]
+            
+            $contentGenre = $content['genres'];
+            $genre = "";
+
+            foreach ($contentGenre as $g) {
+                $genre .= $g['name'].",";
+            }
+
+            $content['genres'] = $genre;
+
+            $response = $this->client->request(
+                'GET',
+                "https://api.themoviedb.org/3/movie/{$id}/credits?api_key=5daff8553d854c2631ec780f6d5b10d6&language=fr"
+            );
+
+            $contentActors = $response->getContent();
+            // $content = '{"id":521583, "name":"symfony-docs", ...}'
+            $contentActors = $response->toArray();
+            // $content = ['id' => 521583, 'name' => 'symfony-docs', ...]
+
+            $contentActors = $contentActors['cast'];
+            $actors = "";
+
+            for($i = 0; $i < 5 ; $i++){
+                $actors .= $contentActors[$i]['name'].",";
+            }
+
+            $content['actors'] = $actors;
+
+            return $content;
         }
     /* ---------------------------------------------------------------------------- */
 
     /* Route pour ajouter un film au clic */
     #[Route('/ajouter-un-film/{idApi}', name: 'film_added', methods:["GET", "POST"] )]
     #[IsGranted("ROLE_ADMIN")]
-    public function saveFilmDB(Request $request, ManagerRegistry $doctrine): Response
+    public function saveFilmDB(Request $request, ManagerRegistry $doctrine, FilmRepository $fRepo): Response
     {
-        #Récupération des données du film
-        $f = $this->fetchFilmById($request->attributes->get('idApi'));
-        /* echo '<script>console.log('.json_encode($request->attributes->get('idApi')).')</script>'; */
+        #Requête pour éviter les doublons en BDD
+        $idApi = $request->attributes->get('idApi');
+        $reqSQL= $fRepo->createQueryBuilder('f')->where('f.idApi LIKE :idApi')->setParameter('idApi', "%$idApi%")->getQuery()->getResult();
 
-        # Copie de la data sélectionnée dans la BDD
-        $newFilm = new Film();
-        $newFilm->setIdApi($f['id']);
-        $newFilm->setTitle($f['title']);
-        $newFilm->setSummary($f['overview']);
-        $newFilm->setReleasedAt(new \DateTime($f['release_date']));
-        $newFilm->setPictures($f['poster_path']);
-        /* $newFilm->setActors($f['actors']); */
-        /* $newFilm->setGenre($f['genres']['name']); */
-       /*  $newFilm->setCountry($f['production_countries']['name']); */
-        $newFilm->setDuration($f['runtime']);
+        #Condition pour savoir si le film est déjà présent dans BDD
+        if(!$reqSQL){
+            #Récupération des données du film
+            $f = $this->fetchFilmById($request->attributes->get('idApi'));
+            /* echo '<script>console.log('.json_encode($f).')</script>';*/
+            # Copie de la data sélectionnée dans la BDD
+            $newFilm = new Film();
+            $newFilm->setIdApi($f['id']);
+            $newFilm->setTitle($f['title']);
+            $newFilm->setSummary($f['overview']);
+            $newFilm->setReleasedAt(new \DateTime($f['release_date']));
+            $newFilm->setPictures($f['poster_path']);
+            $newFilm->setActors($f['actors']);
+            $newFilm->setGenre($f['genres']);
+            $newFilm->setCountry($f['production_countries'][0]['name']);
+            $newFilm->setDuration($f['runtime']);
 
-        # Sauvegarde dans la BDD
-        $doctrine = $this->doctrine->getManager();
-        $doctrine->persist($newFilm);
-        $doctrine->flush();
+            # Sauvegarde dans la BDD
+            $doctrine = $this->doctrine->getManager();
+            $doctrine->persist($newFilm);
+            $doctrine->flush();
 
-        # Notification de confirmation
-        $this->addFlash("success", "Le film a bien été ajouté à la BDD.");
+            # Notification de confirmation
+            $this->addFlash("success", "Le film a bien été ajouté à la BDD.");
+            
+        }
+        else{
+            # Notification d'erreur
+            $this->addFlash("error", "Erreur: Le film existe déjà dans la BDD.");
+        }
+
+
         
         # Redirection
         return $this->redirectToRoute('admin_add_film');
